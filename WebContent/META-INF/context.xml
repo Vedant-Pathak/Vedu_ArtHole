@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+
+    <!-- Default set of monitored resources. If one of these changes, the    -->
+    <!-- web application will be reloaded.                                   -->
+    <!-- <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource> -->
+
+    <!-- Uncomment this to disable session persistence across Tomcat restarts -->
+    <!--
+    <Manager pathname="" />
+    -->
+    <!-- comment if using local db setup -->
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+ 		<Resource name='jdbc/myPool' auth='Container' type='javax.sql.DataSource'
+           factory='org.apache.tomcat.jdbc.pool.DataSourceFactory'
+           maxTotal="8" maxIdle="4" maxWaitMillis="1000"
+           username="developer" password="johnduck" driverClassName="com.mysql.jdbc.Driver"
+           url="jdbc:mysql://aa1axecfuahgec4.ctnztjicbn7p.ap-south-1.rds.amazonaws.com:3306/webshop"/>
+</Context>
